@@ -22,7 +22,7 @@ jobs:
     - name: Wait before deployment
       run: |
         echo "Waiting for 30 seconds before deployment..."
-        sleep 30  # Add your desired delay in seconds
+        sleep 30 
 
     - name: Deploy to Azure Web App
       run: |
