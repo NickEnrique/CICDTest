@@ -23,4 +23,4 @@ jobs:
       run: |
         az webapp config container set --name ${{ secrets.AZURE_WEBAPP_NAME }} \
         --resource-group ${{ secrets.AZURE_RG }} \
-        --docker-custom-image-name ${{ secrets.DOCKER_USERNAME }}/myflaskapp:latest
+        --container-image-name ${{ secrets.DOCKER_USERNAME }}/myflaskapp
