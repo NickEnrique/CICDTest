@@ -1,0 +1,31 @@
+name: CD - Deploy to Azure
+
+on:
+  workflow_run:
+    workflows: ["CI - Build, Test, and Push Docker Image"]  # The name of your CI workflow
+    types:
+      - completed  # This triggers the CD workflow when the CI workflow is completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Log in to Azure CLI
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Pull Docker image
+      run: |
+        echo "Pulling the latest Docker image..."
+        docker pull ${{ secrets.DOCKER_USERNAME }}/myflaskapp:latest
+
+    - name: Deploy to Azure Web App
+      run: |
+        az webapp config container set --name ${{ secrets.AZURE_WEBAPP_NAME }} \
+        --resource-group ${{ secrets.AZURE_RG }} \
+        --docker-custom-image-name ${{ secrets.DOCKER_USERNAME }}/myflaskapp:latest
