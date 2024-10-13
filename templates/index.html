@@ -1,0 +1,38 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+    </head>
+    <body>
+        <form action="/basicCalculation" method="POST">
+            <input type="number" name="num1" placeholder="Enter first number" required>
+            <input type="number" name="num2" placeholder="Enter second number" required>
+
+            <select name="operation1">
+                <option value="add">+</option>
+                <option value="subtract">-</option>
+                <option value="division">÷</option>
+                <option value="multiply">x</option>
+            </select>
+            <br/>
+            <button type="submit">Calculate</button>
+        </form>
+        {% if result1 is not none %}
+        <h2>Result: {{ result1 }}</h2>
+        {% endif %}
+        <form action="/complexCalculation" method="POST">
+            <input type="number" name="num3" placeholder="Enter number" required>
+            <select name="operation2">
+                <option value="squareroot">SquareRoot</option>
+                <option value="square">Square</option>
+                <option value="cube">Cube</option>
+            </select>
+            <br/>
+            <button type="submit">Calculate</button>
+        </form>
+        {% if result2 is not none %}
+        <h2>Result: {{ result2 }}</h2>
+        {% endif %}
+    </body>
+</html>
