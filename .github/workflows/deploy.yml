@@ -24,6 +24,11 @@ jobs:
         echo "Waiting for 30 seconds before deployment..."
         sleep 30 
 
+    - name: Pull Docker image
+      run: |
+        echo "Pulling the latest Docker image..."
+        docker pull ${{ secrets.DOCKER_USERNAME }}/myflaskapp:latest
+
     - name: Deploy to Azure Web App
       run: |
         az webapp config container set --name ${{ secrets.AZURE_WEBAPP_NAME }} \
