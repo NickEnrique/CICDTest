@@ -18,9 +18,14 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
+        
+    - name: Wait before deployment
+      run: |
+        echo "Waiting for 30 seconds before deployment..."
+        sleep 30  # Add your desired delay in seconds
 
     - name: Deploy to Azure Web App
       run: |
         az webapp config container set --name ${{ secrets.AZURE_WEBAPP_NAME }} \
         --resource-group ${{ secrets.AZURE_RG }} \
-        --container-image-name ${{ secrets.DOCKER_USERNAME }}/myflaskapp
+        --container-image-name ${{ secrets.DOCKER_USERNAME }}/myflaskapp:latest
