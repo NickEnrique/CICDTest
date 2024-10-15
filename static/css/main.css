@@ -1,0 +1,108 @@
+/*
+ * Colour palette: https://coolors.co/3c493f-7e8d85-b3bfb8-f0f7f4-a2e3c4
+ */
+
+
+ body {
+	background-color: #3C493F;
+}
+
+h1 {
+	background-color: #B3BFB8;
+	padding: 0.75em;
+	font-family: monospace;
+	border: 2px solid;
+	width: 32.5rem;
+	margin: auto;
+	margin-top: 3rem;
+	text-align: center;
+	font-size: 28pt;
+}
+
+section {
+	margin: auto;
+	margin-top: 2rem;
+	background-color: #7E8D85;
+	width: 34.5rem;
+	padding: 1%;
+}
+
+button {
+	border: 1px solid;
+	width: auto;
+	height: 2rem;
+	padding: 0.5rem 1.0rem 0.5rem 1.0rem;
+	margin: 0.5rem;
+	text-align: center;
+	display: inline-block;
+	vertical-align: middle;
+	background-color: #B3BFB8;
+	user-select: none;
+	font-family: monospace;
+}
+
+button:hover {
+	background-color: #F0F7F4;
+}
+
+input {
+	width: 8rem;
+	height: 2rem;
+	padding: 0.5rem;
+	margin: 1%;
+	border: 1px solid;
+	display: inline-block;
+	vertical-align: middle;
+	background-color: #B3BFB8;
+	font-family: monospace;
+}
+
+select {
+	width: auto;
+	height: 2rem;
+	padding: 0.5rem;
+	margin: 1%;
+	border: 1px solid;
+	display: inline-block;
+	vertical-align: middle;
+	background-color: #B3BFB8;
+	font-family: monospace;
+}
+
+.equation {
+	background-color: #B3BFB8;
+	padding: 1em;
+	font-family: monospace;
+	margin: 0;
+}
+
+td {
+	background-color: #B3BFB8;
+	padding: 16px;
+	text-align: center;
+	user-select: none;
+	font-family: monospace;
+}
+
+table {
+	margin: auto;
+}
+
+.historyEntry {
+	background-color: #B3BFB8;
+	padding: 1em;
+	font-family: monospace;
+	margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+	.calculator {
+		width: 90%;
+	}
+	#display {
+		width: 65%;
+	}
+	#clear {
+		width: 20%;
+	}
+}
